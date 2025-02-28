@@ -1,0 +1,721 @@
+[gd_scene load_steps=42 format=3 uid="uid://cbrwhgt5m5cei"]
+
+[ext_resource type="Script" path="res://Main Scene/home_screen.gd" id="1_25u2v"]
+[ext_resource type="StyleBox" uid="uid://ogvgj5qchimf" path="res://Main Scene/Top Menu/HomeScreenHBoxPressed.tres" id="1_hniw4"]
+[ext_resource type="ButtonGroup" uid="uid://eec4jch7b7gn" path="res://Main Scene/Main Content/HhBoxButtons.tres" id="1_i2qug"]
+[ext_resource type="Texture2D" uid="uid://d2o7e37drtvet" path="res://textures/60^2info.png" id="2_3d2pb"]
+[ext_resource type="Script" path="res://Main Scene/Side Menu/displayTime.gd" id="3_jplpi"]
+[ext_resource type="Script" path="res://Main Scene/Side Menu/events.gd" id="3_t7ha6"]
+[ext_resource type="Texture2D" uid="uid://6yt8amwm1agt" path="res://textures/libFloorMap/MicrosoftTeams-image.png" id="4_hja0j"]
+[ext_resource type="Texture2D" uid="uid://bcpqu2lydc1to" path="res://textures/libFloorMap/Lib_Floor2.svg" id="5_m3pa6"]
+[ext_resource type="Texture2D" uid="uid://cwyrjb0f6w8u8" path="res://textures/libFloorMap/Lib_Floor3.svg" id="6_femwu"]
+[ext_resource type="Script" path="res://Main Scene/Side Menu/LibMaps.gd" id="7_iwvj3"]
+[ext_resource type="Texture2D" uid="uid://dbvtx7ycoewxy" path="res://textures/libFloorMap/Lib_Floor4.svg" id="7_txgva"]
+[ext_resource type="Texture2D" uid="uid://qai8uueigge0" path="res://textures/libFloorMap/Lib_Floor5.svg" id="8_x4tl4"]
+[ext_resource type="Script" path="res://Main Scene/Main Content/mainContent.gd" id="10_y4cdg"]
+[ext_resource type="PackedScene" uid="uid://ddm5bgwd5ix54" path="res://Main Scene/About subscreen/AboutPage.tscn" id="13_5ja5c"]
+[ext_resource type="Script" path="res://Main Scene/Main Content/projectHolder.gd" id="13_lon6a"]
+[ext_resource type="Texture2D" uid="uid://btk14x5awl3ja" path="res://textures/brintonMain.png" id="14_42ufm"]
+[ext_resource type="Script" path="res://Main Scene/Main Content/projLinkScript.gd" id="14_sculn"]
+[ext_resource type="Texture2D" uid="uid://boib0b43hy2ws" path="res://textures/whitmanMain.png" id="15_dd4oi"]
+[ext_resource type="Texture2D" uid="uid://tjlr20nhjdx8" path="res://textures/left-arrow-gray-md.png" id="16_khhqj"]
+[ext_resource type="Texture2D" uid="uid://dt76blxr0mv2h" path="res://textures/tractatusMain.jpg" id="17_1io27"]
+[ext_resource type="Texture2D" uid="uid://b3aofaor8tlxa" path="res://textures/right-arrow-gray-md.png" id="17_4t2p6"]
+[ext_resource type="PackedScene" uid="uid://dg1objwwe0wa4" path="res://Main Scene/Projects subscreen/ProjectsPage.tscn" id="20_61c8u"]
+[ext_resource type="PackedScene" uid="uid://cmyrcwic4c755" path="res://Main Scene/PDH Certificate subscreen/PDH_Certificate_Page.tscn" id="21_gqlbc"]
+[ext_resource type="Texture2D" uid="uid://crw88jhwemd15" path="res://textures/UI Studio Logo scaled.svg" id="24_gbjyo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ayh6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtm6t"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptsih"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_codmc"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2ugd"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73ygj"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2621r"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_1ir5h"]
+resource_name = "E1 Description Fade In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("e1DescBg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_10iw7"]
+resource_name = "E2 Description Fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("e2DescBg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y8nvf"]
+resource_name = "E3 Description Fade In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("e3DescBg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bmatj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("e3DescBg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("e2DescBg:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("e1DescBg:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3tly"]
+_data = {
+"E1 Description Fade In": SubResource("Animation_1ir5h"),
+"E2 Description Fade in": SubResource("Animation_10iw7"),
+"E3 Description Fade In": SubResource("Animation_y8nvf"),
+"RESET": SubResource("Animation_bmatj")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sseg3"]
+bg_color = Color(0, 0.556863, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twwlh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_m4pcd"]
+resource_name = "LibraryFloorButtonGroup"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_im811"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b66t1"]
+bg_color = Color(1, 1, 1, 0.713726)
+
+[node name="home_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_25u2v")
+
+[node name="homeScene" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+
+[node name="topMenu" type="HBoxContainer" parent="homeScene"]
+layout_mode = 0
+offset_left = 1216.0
+offset_top = 54.0
+offset_right = 3776.0
+offset_bottom = 324.0
+theme_override_constants/separation = 32
+
+[node name="aboutButton" type="Button" parent="homeScene/topMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ayh6")
+theme_override_styles/pressed = ExtResource("1_hniw4")
+toggle_mode = true
+button_group = ExtResource("1_i2qug")
+text = "About"
+
+[node name="projectsButton" type="Button" parent="homeScene/topMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_jtm6t")
+theme_override_styles/pressed = ExtResource("1_hniw4")
+toggle_mode = true
+button_group = ExtResource("1_i2qug")
+text = "Projects"
+
+[node name="pdhButton" type="Button" parent="homeScene/topMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptsih")
+theme_override_styles/pressed = ExtResource("1_hniw4")
+toggle_mode = true
+button_group = ExtResource("1_i2qug")
+text = "PDH Certificate"
+
+[node name="sideMenu" type="Panel" parent="homeScene"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 374.0
+offset_right = 1152.0
+offset_bottom = 2106.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_codmc")
+
+[node name="timeLabel" type="Label" parent="homeScene/sideMenu"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 27.0
+offset_right = 1056.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 90
+text = "timeLabel"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("3_jplpi")
+
+[node name="EventsHeader" type="Label" parent="homeScene/sideMenu"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 186.0
+offset_right = 1056.0
+offset_bottom = 294.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 74
+theme_override_styles/normal = SubResource("StyleBoxFlat_c2ugd")
+text = "  Upcoming Events"
+vertical_alignment = 1
+
+[node name="CalanderLink" type="LinkButton" parent="homeScene/sideMenu"]
+visible = false
+layout_mode = 0
+offset_left = 751.0
+offset_top = 220.0
+offset_right = 931.0
+offset_bottom = 275.0
+theme_override_colors/font_color = Color(0, 0.596078, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "See more"
+
+[node name="events" type="Panel" parent="homeScene/sideMenu"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 294.0
+offset_right = 1056.0
+offset_bottom = 850.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_73ygj")
+script = ExtResource("3_t7ha6")
+
+[node name="event1Time" type="Label" parent="homeScene/sideMenu/events"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "e1dt"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="event1Name" type="Label" parent="homeScene/sideMenu/events"]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 915.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "name"
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="event1InfoButton" type="TextureButton" parent="homeScene/sideMenu/events"]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 62.0
+offset_right = 980.0
+offset_bottom = 122.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_3d2pb")
+
+[node name="e1DescBg" type="PanelContainer" parent="homeScene/sideMenu/events"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+layout_mode = 0
+offset_left = 1045.0
+offset_top = -60.0
+offset_right = 1845.0
+offset_bottom = 245.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2621r")
+
+[node name="event1Desc" type="Label" parent="homeScene/sideMenu/events/e1DescBg"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "desc"
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+[node name="event2Time" type="Label" parent="homeScene/sideMenu/events"]
+layout_mode = 0
+offset_top = 185.0
+offset_right = 200.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "dt"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="event2Name" type="Label" parent="homeScene/sideMenu/events"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 185.0
+offset_right = 915.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "name"
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="event2InfoButton" type="TextureButton" parent="homeScene/sideMenu/events"]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 247.0
+offset_right = 980.0
+offset_bottom = 307.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_3d2pb")
+
+[node name="e2DescBg" type="PanelContainer" parent="homeScene/sideMenu/events"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 125.0
+offset_right = 1845.0
+offset_bottom = 430.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2621r")
+
+[node name="event2Desc" type="Label" parent="homeScene/sideMenu/events/e2DescBg"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "desc"
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+[node name="event3Time" type="Label" parent="homeScene/sideMenu/events"]
+layout_mode = 0
+offset_top = 370.0
+offset_right = 200.0
+offset_bottom = 555.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "dt"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="event3Name" type="Label" parent="homeScene/sideMenu/events"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 370.0
+offset_right = 915.0
+offset_bottom = 555.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "name"
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="event3InfoButton" type="TextureButton" parent="homeScene/sideMenu/events"]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 432.0
+offset_right = 980.0
+offset_bottom = 492.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_3d2pb")
+
+[node name="e3DescBg" type="PanelContainer" parent="homeScene/sideMenu/events"]
+visible = false
+z_index = 3
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 310.0
+offset_right = 1845.0
+offset_bottom = 615.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2621r")
+
+[node name="event3Desc" type="Label" parent="homeScene/sideMenu/events/e3DescBg"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "desc"
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="homeScene/sideMenu/events"]
+libraries = {
+"": SubResource("AnimationLibrary_a3tly")
+}
+
+[node name="MapHeader" type="Label" parent="homeScene/sideMenu"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 850.0
+offset_right = 1056.0
+offset_bottom = 954.0
+theme_override_font_sizes/font_size = 65
+text = "Going Somewhere?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LibMaps" type="Panel" parent="homeScene/sideMenu"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 955.0
+offset_right = 1056.0
+offset_bottom = 1705.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sseg3")
+script = ExtResource("7_iwvj3")
+
+[node name="floor1" type="TextureRect" parent="homeScene/sideMenu/LibMaps"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = -32.0
+offset_right = 5314.0
+offset_bottom = 4468.0
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("4_hja0j")
+
+[node name="floor2" type="TextureRect" parent="homeScene/sideMenu/LibMaps"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = -32.0
+offset_right = 5314.0
+offset_bottom = 4468.0
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("5_m3pa6")
+
+[node name="floor3" type="TextureRect" parent="homeScene/sideMenu/LibMaps"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = -32.0
+offset_right = 5314.0
+offset_bottom = 4468.0
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("6_femwu")
+
+[node name="floor4" type="TextureRect" parent="homeScene/sideMenu/LibMaps"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = -32.0
+offset_right = 5314.0
+offset_bottom = 4468.0
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("7_txgva")
+
+[node name="floor5" type="TextureRect" parent="homeScene/sideMenu/LibMaps"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = -32.0
+offset_right = 5314.0
+offset_bottom = 4468.0
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("8_x4tl4")
+
+[node name="floorButtons" type="Panel" parent="homeScene/sideMenu"]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 1651.0
+offset_right = 638.0
+offset_bottom = 1705.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_twwlh")
+
+[node name="f1" type="LinkButton" parent="homeScene/sideMenu/floorButtons"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 35
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_m4pcd")
+text = "1"
+
+[node name="f2" type="LinkButton" parent="homeScene/sideMenu/floorButtons"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 72.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 35
+toggle_mode = true
+button_group = SubResource("ButtonGroup_m4pcd")
+text = "2"
+
+[node name="f3" type="LinkButton" parent="homeScene/sideMenu/floorButtons"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 112.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 35
+toggle_mode = true
+button_group = SubResource("ButtonGroup_m4pcd")
+text = "3"
+
+[node name="f4" type="LinkButton" parent="homeScene/sideMenu/floorButtons"]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 152.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 35
+toggle_mode = true
+button_group = SubResource("ButtonGroup_m4pcd")
+text = "4"
+
+[node name="f5" type="LinkButton" parent="homeScene/sideMenu/floorButtons"]
+layout_mode = 0
+offset_left = 158.0
+offset_right = 190.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 35
+toggle_mode = true
+button_group = SubResource("ButtonGroup_m4pcd")
+text = "5
+"
+
+[node name="mainContent" type="Panel" parent="homeScene"]
+layout_mode = 0
+offset_left = 1216.0
+offset_top = 374.0
+offset_right = 3776.0
+offset_bottom = 2106.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_im811")
+script = ExtResource("10_y4cdg")
+
+[node name="projectHolder" type="Control" parent="homeScene/mainContent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_lon6a")
+
+[node name="projectLinks" type="Control" parent="homeScene/mainContent/projectHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="brinton" type="TextureButton" parent="homeScene/mainContent/projectHolder/projectLinks"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3128.0
+offset_bottom = 2124.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.449, 0.449)
+texture_normal = ExtResource("14_42ufm")
+script = ExtResource("14_sculn")
+
+[node name="Whitman" type="TextureButton" parent="homeScene/mainContent/projectHolder/projectLinks"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3128.0
+offset_bottom = 2124.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.449, 0.449)
+texture_normal = ExtResource("15_dd4oi")
+script = ExtResource("14_sculn")
+
+[node name="Tractatus" type="TextureButton" parent="homeScene/mainContent/projectHolder/projectLinks"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3128.0
+offset_bottom = 2124.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.449, 0.449)
+texture_normal = ExtResource("17_1io27")
+script = ExtResource("14_sculn")
+
+[node name="ComingSoon" type="PanelContainer" parent="homeScene/mainContent/projectHolder/projectLinks/Tractatus"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b66t1")
+
+[node name="Label" type="Label" parent="homeScene/mainContent/projectHolder/projectLinks/Tractatus/ComingSoon"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 240
+text = "Coming soon"
+horizontal_alignment = 1
+
+[node name="navButtonLeft" type="TextureButton" parent="homeScene/mainContent/projectHolder"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 800.0
+offset_right = 253.0
+offset_bottom = 1099.0
+scale = Vector2(0.4, 0.4)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("16_khhqj")
+
+[node name="navButtonRight" type="TextureButton" parent="homeScene/mainContent/projectHolder"]
+layout_mode = 0
+offset_left = 2418.0
+offset_top = 800.0
+offset_right = 2607.0
+offset_bottom = 1099.0
+scale = Vector2(0.4, 0.4)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_4t2p6")
+
+[node name="infoPages" type="Control" parent="homeScene/mainContent"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AboutPage" parent="homeScene/mainContent/infoPages" instance=ExtResource("13_5ja5c")]
+visible = false
+
+[node name="ProjectsPage" parent="homeScene/mainContent/infoPages" instance=ExtResource("20_61c8u")]
+visible = false
+
+[node name="PDHPage" parent="homeScene/mainContent/infoPages" instance=ExtResource("21_gqlbc")]
+visible = false
+
+[node name="StudioButton" type="TextureButton" parent="homeScene"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 29.0
+offset_right = 413.0
+offset_bottom = 129.0
+scale = Vector2(3, 3)
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("1_i2qug")
+texture_normal = ExtResource("24_gbjyo")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="toggled" from="homeScene/topMenu/aboutButton" to="homeScene/mainContent" method="_on_about_button_toggled"]
+[connection signal="toggled" from="homeScene/topMenu/projectsButton" to="homeScene/mainContent" method="_on_projects_button_toggled"]
+[connection signal="toggled" from="homeScene/topMenu/pdhButton" to="homeScene/mainContent" method="_on_pdh_button_toggled"]
+[connection signal="pressed" from="homeScene/sideMenu/events/event1InfoButton" to="homeScene/sideMenu/events" method="_on_event_1_info_button_pressed"]
+[connection signal="pressed" from="homeScene/sideMenu/events/event2InfoButton" to="homeScene/sideMenu/events" method="_on_event_2_info_button_pressed"]
+[connection signal="pressed" from="homeScene/sideMenu/events/event3InfoButton" to="homeScene/sideMenu/events" method="_on_event_3_info_button_pressed"]
+[connection signal="toggled" from="homeScene/sideMenu/floorButtons/f1" to="homeScene/sideMenu/LibMaps" method="_on_f_1_toggled"]
+[connection signal="toggled" from="homeScene/sideMenu/floorButtons/f2" to="homeScene/sideMenu/LibMaps" method="_on_f_2_toggled"]
+[connection signal="toggled" from="homeScene/sideMenu/floorButtons/f3" to="homeScene/sideMenu/LibMaps" method="_on_f_3_toggled"]
+[connection signal="toggled" from="homeScene/sideMenu/floorButtons/f4" to="homeScene/sideMenu/LibMaps" method="_on_f_4_toggled"]
+[connection signal="toggled" from="homeScene/sideMenu/floorButtons/f5" to="homeScene/sideMenu/LibMaps" method="_on_f_5_toggled"]
+[connection signal="pressed" from="homeScene/mainContent/projectHolder/projectLinks/brinton" to="." method="_on_brinton_pressed"]
+[connection signal="pressed" from="homeScene/mainContent/projectHolder/projectLinks/Whitman" to="." method="_on_whitman_pressed"]
+[connection signal="pressed" from="homeScene/mainContent/projectHolder/projectLinks/Tractatus" to="." method="_on_tractatus_pressed"]
+[connection signal="pressed" from="homeScene/mainContent/projectHolder/navButtonLeft" to="homeScene/mainContent/projectHolder" method="_on_nav_button_left_pressed"]
+[connection signal="pressed" from="homeScene/mainContent/projectHolder/navButtonRight" to="homeScene/mainContent/projectHolder" method="_on_nav_button_right_pressed"]
+[connection signal="toggled" from="homeScene/StudioButton" to="homeScene/mainContent" method="_on_studio_button_toggled"]
+
+[editable path="homeScene/mainContent/infoPages/AboutPage"]

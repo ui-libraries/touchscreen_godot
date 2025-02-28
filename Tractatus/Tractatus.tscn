@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgj8ea7kx2ap4"]
+
+[ext_resource type="Script" path="res://Tractatus/Tractatus.gd" id="1_dc80s"]
+[ext_resource type="Texture2D" uid="uid://ck1byfylhnaod" path="res://textures/grayX.png" id="1_huivx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t35q0"]
+bg_color = Color(0.498039, 0.690196, 0.890196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbk0e"]
+bg_color = Color(0.498039, 0.690196, 0.890196, 1)
+
+[node name="Tractatus" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dc80s")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu Background" type="PanelContainer" parent="Background"]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 300.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t35q0")
+
+[node name="Label" type="Label" parent="Background/Menu Background"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 60
+text = "The Tractatus Map"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 428.0
+offset_right = 3732.0
+offset_bottom = 2052.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+bbcode_enabled = true
+text = "Welcome to the University of Iowa Tractatus map.
+
+Ludwig Wittgenstein’s Tractatus Logico-Philosophicus consists of a series of numbered remarks, arranged in numerical order. The seven most important are numbered 1 to 7; decimal numbers are used to indicate the structure of the supporting paragraphs. 
+
+The site is built around a subway-style map, with the aim of displaying the overall structure of the numbering system, and making it easy to look at the sequences of propositions described in the introductory footnote, together with the remark that they comment on. This is the first Tractatus website to provide a map of the book’s overall structure, and the only one that provides parallel access to the earlier versions of the text in the Prototractatus.
+
+Clicking on the individual numbered stations, each of which stands for a remark in the text, or the lines connecting the stations, brings up a panel containing the associated text.  The default text is the German original, but a dropdown menu in each text panel allows you to choose either of the canonical English translations. You can also zoom in on any part of the map, and then move around in it, or zoom out to see the whole. The site is still in the early stages of development, and we plan to improve and extend it in the future.
+
+The yellow main line at the top of the page, represents the whole-numbered remarks, (1, 2…7), each of which is represented by a station on that line. The red and pink lines, branching off each of the first six remarks (1.1, 1.2, 2.1, 2.2, 2.01, 2.02, 2.03… and so on) represent the sequences of remarks that comment on the whole-numbered remarks. Further levels of comments are represented by lines in orange, green, acqua, blue, purple and grey.
+
+Wittgenstein made use of numbers with one or more zeros so that he could have separate sets of comments on a single remark (such as the pair of series of remarks on 2 (2.01, 2.02, 2.03…2.06; 2.1, 2.2) and the three sets of remarks on 3 (3.001; 3.01, 3.02…; 3.1, 3.2...)). We indicate these “centesimals” (comments with an initial zero) and “millesimals” (comments with two initial zeros) by paler versions of the color for the corresponding remarks without a zero.
+
+The green button in the top left corner of the Tractatus map leads to a similar map of the Prototractatus, an early version of the Tractatus. By choosing different start and end pages at the top of that map, it's possible to see different stages in the construction of the Prototractatus: the chosen pages are in color, the others are greyed out. (The two principal stages are the 'core' Prototractatus, which ends at a dividing line on page 28 of the manuscript, and the so-called Proto-Prototractatus, which ends at a similar dividing line near the bottom of page 70).
+
+Phillip Ricks drafted the first version of the map, using a pencil and graph paper, while taking part in David Stern’s graduate seminar on the Tractatus. David turned it into an Excel spreadsheet, and suggested that we use it as the basis for an online map of both the Tractatus and the Prototractatus. Landon Elkind joined us in working on the design of the online map, and made a crucial contribution to the Prototractatus part of the project. The construction and design of the website was done by Matthew Butler and Nikki White at the University of Iowa Library’s Digital Scholarship and Publishing Studio. We are grateful to Kevin Klement for his editorial work on the public domain English and German editions of the Tractatus used on the site. We would also like to thank Tom Keegan for the initial invitation that led to the construction of this site.
+
+For further information about this project, and a rationale for its design, please see David Stern's “The University of Iowa Tractatus Map” Nordic Wittgenstein Review 5:2 (2016) 203-220.
+
+[font_size={45}][b]Inspiration[/b][/font_size]
+Some other Tractatus websites that inspired ours:
+
+Jonathan Laventhol’s hypertext edition is the oldest Tractatus site on the web, dating back to 1996.
+
+Luciano Bazzocchi’s site is part of an extensive research program on the structure of the Tractatus.
+
+Kevin Klement’s elegant public domain edition of the German text and the two canonical English translations, provided in a wide variety of formats, is the principal source of the text used on our site.
+
+The Bergen Wittgenstein Archives' Wittgenstein Source site provides resources for scholarly study of the sources of the Tractatus."
+
+[node name="TractatusMapLink" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 330.0
+offset_right = 204.0
+offset_bottom = 395.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_fbk0e")
+text = "  Load the Tractatus Map  "
+
+[node name="Mainexit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 3595.0
+offset_top = 109.0
+offset_right = 4875.0
+offset_bottom = 1389.0
+scale = Vector2(0.08, 0.08)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_huivx")
+
+[connection signal="pressed" from="Background/TractatusMapLink" to="." method="_on_tractatus_map_link_pressed"]
+[connection signal="pressed" from="Mainexit" to="." method="_on_mainexit_pressed"]

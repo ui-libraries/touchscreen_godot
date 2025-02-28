@@ -1,0 +1,240 @@
+[gd_scene load_steps=13 format=3 uid="uid://dj2luth53gv7a"]
+
+[ext_resource type="Texture2D" uid="uid://d2o7e37drtvet" path="res://textures/60^2info.png" id="1_civk8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmhr1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 64
+border_width_top = 54
+border_width_right = 64
+border_width_bottom = 54
+border_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjmhl"]
+bg_color = Color(0.627451, 0.12549, 0.941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g070i"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhlif"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktxq0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 32
+border_width_top = 27
+border_width_right = 32
+border_width_bottom = 27
+border_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyhv7"]
+bg_color = Color(0.0862745, 0.635294, 0.941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jhwq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mia3"]
+bg_color = Color(1, 1, 1, 0.313726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qweag"]
+bg_color = Color(0, 0.00392157, 0.772549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ibcq"]
+bg_color = Color(0, 0.67451, 0.756863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt4qd"]
+bg_color = Color(0.627451, 0.12549, 0.941176, 1)
+
+[node name="background" type="ColorRect"]
+editor_description = "This is the background color upon which everything from the homescreen will rest. "
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="border" type="Panel" parent="."]
+editor_description = "This is the empty space that must exist between background's edges and any allowed content therein"
+custom_minimum_size = Vector2(3840, 2160)
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dmhr1")
+
+[node name="logoSpace" type="Panel" parent="."]
+editor_description = "This is the rectangle in which the logo must fit. These dimensions determine the x value of all items in the space below and the y value of all buttons in the space to the right"
+layout_mode = 0
+offset_left = 64.0
+offset_top = 54.0
+offset_right = 1152.0
+offset_bottom = 324.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wjmhl")
+
+[node name="hBox" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1216.0
+offset_top = 54.0
+offset_right = 3776.0
+offset_bottom = 324.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g070i")
+
+[node name="sepSpec" type="Label" parent="hBox"]
+layout_mode = 0
+offset_right = 2557.0
+offset_bottom = 272.0
+theme_override_font_sizes/font_size = 60
+text = "item seperator = 16 | 32 px
+consistant sizing+spacing therefore hbox worth using as container"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="vBox" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 374.0
+offset_right = 1152.0
+offset_bottom = 2106.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhlif")
+
+[node name="vBox border" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 374.0
+offset_right = 1152.0
+offset_bottom = 2106.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ktxq0")
+
+[node name="timeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 401.0
+offset_right = 1120.0
+offset_bottom = 563.0
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_xyhv7")
+text = "timeLabel"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="EventsHeader" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 560.0
+offset_right = 768.0
+offset_bottom = 668.0
+theme_override_font_sizes/font_size = 74
+theme_override_styles/normal = SubResource("StyleBoxFlat_6jhwq")
+text = "EventsHeader"
+vertical_alignment = 1
+
+[node name="eventBox" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 668.0
+offset_right = 1120.0
+offset_bottom = 1224.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6mia3")
+
+[node name="event1Time" type="Label" parent="eventBox"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "e1dt"
+autowrap_mode = 2
+
+[node name="event1Name" type="Label" parent="eventBox"]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 915.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "name"
+vertical_alignment = 1
+
+[node name="event1InfoButton" type="TextureButton" parent="eventBox"]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 62.0
+offset_right = 980.0
+offset_bottom = 122.0
+texture_normal = ExtResource("1_civk8")
+
+[node name="MapHeader" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 1224.0
+offset_right = 1120.0
+offset_bottom = 1328.0
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_qweag")
+text = "Map Header"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LibMaps" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 1329.0
+offset_right = 1120.0
+offset_bottom = 2079.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ibcq")
+
+[node name="floorButtons" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 2025.0
+offset_right = 702.0
+offset_bottom = 2079.0
+
+[node name="f1" type="Button" parent="floorButtons"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="f2" type="Button" parent="floorButtons"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 72.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 30
+text = "2"
+
+[node name="f3" type="Button" parent="floorButtons"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 112.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 30
+text = "3"
+
+[node name="f4" type="Button" parent="floorButtons"]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 152.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 30
+text = "4"
+
+[node name="f5" type="Button" parent="floorButtons"]
+layout_mode = 0
+offset_left = 158.0
+offset_right = 190.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 30
+text = "5
+"
+
+[node name="mainContent" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1216.0
+offset_top = 374.0
+offset_right = 3776.0
+offset_bottom = 2106.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lt4qd")
+
+[node name="Timer" type="Timer" parent="."]

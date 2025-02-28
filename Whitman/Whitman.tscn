@@ -1,0 +1,274 @@
+[gd_scene load_steps=18 format=3 uid="uid://diy1m4kbhy4c0"]
+
+[ext_resource type="VideoStream" path="res://VideoStreams/WWFaceAnimation.ogv" id="1_0aslc"]
+[ext_resource type="Script" path="res://Whitman/WhitmanScene.gd" id="1_747sx"]
+[ext_resource type="Texture2D" uid="uid://dwd71s6sktfd6" path="res://textures/WWSignature_Silver.png" id="1_v84rh"]
+[ext_resource type="Texture2D" uid="uid://de1iir64s0pwx" path="res://textures/Whitman_Silver_Dividing_Decoration.svg" id="2_isin7"]
+[ext_resource type="Texture2D" uid="uid://ck1byfylhnaod" path="res://textures/grayX.png" id="2_q8o8l"]
+[ext_resource type="FontFile" uid="uid://ci7m6bnw3a6lf" path="res://fonts/petit-formal-script/PetitFormalScript-Regular.ttf" id="3_f84fe"]
+[ext_resource type="Script" path="res://Main Scene/Mainexit.gd" id="3_y60v3"]
+[ext_resource type="ButtonGroup" path="res://Whitman/menuButtonGroup.tres" id="4_1tcbu"]
+[ext_resource type="Script" path="res://Whitman/DisplayItems.gd" id="6_rms3a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b7kd"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.811765, 0.709804, 0.231373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on0cx"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 35
+border_width_top = 35
+border_width_right = 35
+border_width_bottom = 35
+border_color = Color(0.811765, 0.709804, 0.231373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2viv2"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.811765, 0.709804, 0.231373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmngv"]
+bg_color = Color(0.811765, 0.709804, 0.231373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0iu1"]
+bg_color = Color(0.960784, 0.960784, 0.960784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fe02"]
+bg_color = Color(0.960784, 0.960784, 0.960784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdpmo"]
+bg_color = Color(0.960784, 0.960784, 0.960784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgyem"]
+bg_color = Color(0.960784, 0.960784, 0.960784, 1)
+
+[node name="WhitmanScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_747sx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(3840, 2160)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="StyledBorder" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="OuterTinyBorder" type="Panel" parent="StyledBorder"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 3820.0
+offset_bottom = 2140.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8b7kd")
+
+[node name="ThickBorder" type="Panel" parent="StyledBorder"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 45.0
+offset_right = 3795.0
+offset_bottom = 2115.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_on0cx")
+
+[node name="InnerTinyBorder" type="Panel" parent="StyledBorder"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 95.0
+offset_right = 3745.0
+offset_bottom = 2065.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2viv2")
+
+[node name="InsideBorder" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 105.0
+offset_top = 105.0
+offset_right = 3735.0
+offset_bottom = 2055.0
+
+[node name="SignatureMenu" type="Control" parent="InsideBorder"]
+anchors_preset = 0
+offset_right = 2064.0
+offset_bottom = 1950.0
+
+[node name="signature" type="TextureRect" parent="InsideBorder/SignatureMenu"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 122.0
+offset_right = 2057.0
+offset_bottom = 758.0
+texture = ExtResource("1_v84rh")
+expand_mode = 1
+
+[node name="divider" type="TextureRect" parent="InsideBorder/SignatureMenu"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 790.0
+offset_right = 2083.0
+offset_bottom = 1030.0
+texture = ExtResource("2_isin7")
+
+[node name="menu" type="VBoxContainer" parent="InsideBorder/SignatureMenu"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 1100.0
+offset_right = 1986.0
+offset_bottom = 1749.0
+theme_override_constants/separation = 45
+
+[node name="Past Exibit" type="Button" parent="InsideBorder/SignatureMenu/menu"]
+custom_minimum_size = Vector2(1300, 135)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_f84fe")
+theme_override_font_sizes/font_size = 95
+theme_override_styles/normal = SubResource("StyleBoxFlat_pmngv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q0iu1")
+toggle_mode = true
+button_group = ExtResource("4_1tcbu")
+text = "Past Exibit"
+
+[node name="Scholarship at Iowa" type="Button" parent="InsideBorder/SignatureMenu/menu"]
+custom_minimum_size = Vector2(1300, 135)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_f84fe")
+theme_override_font_sizes/font_size = 95
+theme_override_styles/normal = SubResource("StyleBoxFlat_pmngv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fe02")
+toggle_mode = true
+button_group = ExtResource("4_1tcbu")
+text = "Scholarship at Iowa"
+
+[node name="The Maps" type="Button" parent="InsideBorder/SignatureMenu/menu"]
+custom_minimum_size = Vector2(1300, 135)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_f84fe")
+theme_override_font_sizes/font_size = 95
+theme_override_styles/normal = SubResource("StyleBoxFlat_pmngv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sdpmo")
+toggle_mode = true
+button_group = ExtResource("4_1tcbu")
+text = "The Maps"
+
+[node name="Faces of Whitman" type="Button" parent="InsideBorder/SignatureMenu/menu"]
+custom_minimum_size = Vector2(1300, 135)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_f84fe")
+theme_override_font_sizes/font_size = 95
+theme_override_styles/normal = SubResource("StyleBoxFlat_pmngv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fgyem")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("4_1tcbu")
+text = "Faces of Whitman"
+
+[node name="DisplayItems" type="Control" parent="InsideBorder"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2083.0
+offset_right = 3633.0
+offset_bottom = 1950.0
+script = ExtResource("6_rms3a")
+
+[node name="PastExibit" type="Label" parent="InsideBorder/DisplayItems"]
+visible = false
+layout_mode = 0
+offset_top = 130.0
+offset_right = 1340.0
+offset_bottom = 1830.0
+theme_override_font_sizes/font_size = 34
+text = "One of the most influential writers in American literature, Walt Whitman (1819–1892) will be celebrated during his 200th birthday year around the nation and around the world. The University of Iowa Main Library’s exhibit “Walt Whitman: A Bicentennial Celebration” highlights Whitman’s writings across all stages of his life and showcases the significant scholarship on the poet that has been produced at the University of Iowa.
+
+The exhibit features works by and about Whitman from the University of Iowa Libraries Special Collections, making these materials available for public viewing (in many cases, for the first time). Many items on display represent significant eras in Whitman’s life and writing career from his days as an upstart journalist and popular fiction writer to his moving accounts of his volunteer work in the Civil War hospitals in Washington, D.C., and from his radical poetic experiments in publishing his collection of poems entitled Leaves of Grass to his efforts to preserve his legacy as America’s Poet in his last years.
+
+The exhibit also reveals Whitman’s skills as a bookmaker and his enthusiasm for the interplay between the printing and physical construction of the book; it traces his lifetime of reexamining his poetry and redesigning each edition of Leaves of Grass. It presents some of his most beloved and familiar poems, including “Song of Myself” and “Calamus” as well as less familiar works, such as his first short story, “Death in the School-Room,” and his bestselling 1842 temperance novel Franklin Evans.
+
+The exhibit also demonstrates Whitman’s incredible afterlife, during which his writings have been translated and published worldwide and preserved in both print and digital formats. At the same time, the exhibit explores the longstanding ways the University of Iowa became known as the heart of Whitman scholarship and celebrates Iowa’s significant role in print and digital Whitman preservation and scholarship. At a political and historical moment when Whitman’s language and our understanding of what constitutes justice in America are as pertinent as ever, this exhibit invites us to reflect not only on Whitman as an American poet in the nineteenth century, about how we have read him and his works over the past hundred years, and about the place of Whitman and his writing in the future of American and worldwide democracy."
+autowrap_mode = 2
+
+[node name="ScholarshipAtIowa" type="Label" parent="InsideBorder/DisplayItems"]
+visible = false
+layout_mode = 0
+offset_top = 130.0
+offset_right = 1340.0
+offset_bottom = 1830.0
+theme_override_font_sizes/font_size = 34
+text = "Over the past thirty-five years, the University of Iowa has become recognized internationally as a major center for the study of Whitman. Iowa is home to the Iowa Whitman Series, published by the University of Iowa Press (UI Press)—a series of the best scholarly books on Whitman, with twenty-five titles published so far. In the 1980s, the Walt Whitman Quarterly Review (WWQR), the international journal of record for Whitman Studies, came to the university; the journal is in its thirty-sixth year, and it is now published as an open-access online journal that is freely available internationally to scholars, students, teachers, and general readers. Two previously unknown works by Whitman—his journalistic series “Manly Health and Training” (1858) and his novel Life and Adventures of Jack Engle: An Auto-Biography (1852)—were reprinted in WWQR in 2016 and 2017, respectively. From its inception in the 1990s, the UI has supported and collaborated to expand the online Walt Whitman Archive, which includes Whitman’s published works, as well as manuscripts, correspondence, contemporary reviews, and numerous photographs. The Digital Scholarship and Publishing Studio in the UI Main Library has also facilitated digital humanities research that sheds new light on Whitman’s life and writings and asks us all to reassess what we thought we knew about America’s Poet. This exciting work has become and promises to remain vital to the future of Whitman Studies.
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TheMaps" type="RichTextLabel" parent="InsideBorder/DisplayItems"]
+visible = false
+layout_mode = 0
+offset_top = 130.0
+offset_right = 1340.0
+offset_bottom = 1880.0
+theme_override_font_sizes/normal_font_size = 31
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/italics_font_size = 31
+theme_override_font_sizes/bold_italics_font_size = 31
+theme_override_font_sizes/mono_font_size = 31
+bbcode_enabled = true
+text = "Current digital projects in progress at Iowa include Alexander J. Ashland’s Whitmap, which focuses on visualizing Whitman’s two-way correspondence from the 1840s until the poet’s death in 1892 and Stephanie M. Blalock’s Whitman’s Fiction, which tracks the reprinting of Whitman’s short stories in newspapers and magazines during and after his lifetime. These projects present original research and represent significant collaborations between undergraduate and graduate students, the Walt Whitman Archive, and faculty and staff in the Digital Scholarship and Publishing Studio.
+
+[b][u]Whitmap[/u][/b]
+This Touch Screen version of Whitmap is an interactive map of Walt Whitman’s epistolary corpus. Using data gathered from The Walt Whitman Archive, this map shows all the extant messages Whitman sent and received throughout his lifetime and invites users to explore the complexity of nineteenth-century correspondence networks. A timeline feature highlights the global scope of Whitman’s correspondence, noting patterns of epistolary activity with the hope of encouraging more nuanced explorations of the data. The online version of Whitmap is available here: [url]http://alexashland.github.io/alexashland/Whitmap.html[/url], and this version of the project enables additional features that allow users to explore letters based on major biographical and historical events, as well as thematic categories, such as family, publisher, and admirer. Because Whitmap asks users to consider both the social and historical context of the poet’s correspondence network, a future goal is to incorporate full search functionality, allowing users to find individual correspondents and search for key phrases.
+
+[b][u]Whitman’s Fiction[/u][/b]
+Based on nine years of research, the Touch Screen version of Mapping Whitman’s Fiction is an interactive map that utilizes publication data on the printing and reprinting of Whitman’s fiction in the nineteenth, twentieth, and twenty-first centuries. This map charts the reprinting of Whitman’s fiction in newspapers and magazines from 1844—when he published his first short story “Death in the School-Room. A Fact”—until today. This project focuses especially on the national and international circulation of Whitman’s fiction and the use of his writings in newspaper and magazine culture. Mapping Whitman’s Fiction places the reprinting of Whitman’s fiction in its geographical context, allowing users to explore patterns in its dissemination across time. This map suggests as well that Whitman, even before becoming known as a poet, was recognized as a fiction writer whose stories were widely read, reprinted, and circulated. These mappings of Whitman’s fiction therefore deepen our understanding of Whitman not only as a writer, whose reputation began with Whitman as “America’s poet,” but also as a journalist and editor, whose stories appeared in hundreds of newspapers and magazines during his lifetime."
+autowrap_mode = 2
+
+[node name="FacesOfWhitman" type="VideoStreamPlayer" parent="InsideBorder/DisplayItems"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 552.0
+offset_right = 3141.0
+offset_bottom = 3560.0
+scale = Vector2(0.45, 0.45)
+stream = ExtResource("1_0aslc")
+autoplay = true
+loop = true
+
+[node name="Mainexit" type="TextureButton" parent="InsideBorder"]
+layout_mode = 0
+offset_left = 3455.0
+offset_top = 45.0
+offset_right = 4735.0
+offset_bottom = 1325.0
+scale = Vector2(0.08, 0.08)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_q8o8l")
+script = ExtResource("3_y60v3")
+
+[connection signal="toggled" from="InsideBorder/SignatureMenu/menu/Past Exibit" to="InsideBorder/DisplayItems" method="_on_past_exibit_toggled"]
+[connection signal="toggled" from="InsideBorder/SignatureMenu/menu/Scholarship at Iowa" to="InsideBorder/DisplayItems" method="_on_scholarship_at_iowa_toggled"]
+[connection signal="toggled" from="InsideBorder/SignatureMenu/menu/The Maps" to="InsideBorder/DisplayItems" method="_on_the_maps_toggled"]
+[connection signal="toggled" from="InsideBorder/SignatureMenu/menu/Faces of Whitman" to="InsideBorder/DisplayItems" method="_on_faces_of_whitman_toggled"]
+[connection signal="pressed" from="InsideBorder/Mainexit" to="." method="_on_mainexit_pressed"]

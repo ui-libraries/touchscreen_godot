@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfcqyt7khnojj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ij27"]
+bg_color = Color(0.803922, 0.196078, 0.196078, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e1ed"]
+bg_color = Color(0.803922, 0.196078, 0.196078, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ElementTemplate2" type="Control"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 606.0
+offset_top = 304.0
+offset_right = 606.0
+offset_bottom = 304.0
+
+[node name="Node" type="Button" parent="."]
+layout_mode = 0
+offset_top = -10.0
+offset_right = 100.0
+offset_bottom = 10.0
+pivot_offset = Vector2(0, 10)
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ij27")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5e1ed")

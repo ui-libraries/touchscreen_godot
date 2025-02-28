@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmyrcwic4c755"]
+
+[ext_resource type="Script" path="res://Main Scene/About subscreen/AboutPage.gd" id="1_0dwcg"]
+
+[node name="Page" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2560.0
+offset_bottom = 1732.0
+script = ExtResource("1_0dwcg")
+
+[node name="MainHeader" type="Label" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 213.0
+offset_right = 1739.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 80
+text = "The Public Digital Humanitites"
+
+[node name="Body" type="RichTextLabel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 353.0
+offset_right = 2560.0
+offset_bottom = 1153.0
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+text = "The PDH certificate is a dynamic and creative hands-on, 12-semester-hour program that helps graduate students develop digital scholarship use within and beyond academia. The certificate is available to graduate degree students across the University-regardless of their familiarity with digital humanities. 
+
+The flexibility of the certificate curriculum helps students, their advisors, and dapartment heads work together to identify an effective path for students en route to their degree objective. Students may pursue basic training in an array of digital methods or choose to focus on a particular area of digital practice: GIS, data visualization, textual analysis, podcasting, digital archiving, and digital exhibits. We encourse pursuing the certificate to take DH courses in their home departments or in cognate fields in order to deepen and diverify their research under pedagogical, and public humanities approaches. 
+
+If you have questions you can contact Tom Keegan, Head, Digital Scholarship & Publishing Studio.
+
+Ongoing news and updates about the certificate and its students can be found on the student blog. And certificate students are invite to join the Studio's mailing list to stay up-to-date on the latest workshops, fellowships, grant opportunities, and more."

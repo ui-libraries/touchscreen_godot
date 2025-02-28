@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c47ng3tn2qhoe"]
+
+[ext_resource type="Script" path="res://Main Scene/Main Content/navBoxButton.gd" id="2_rql46"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhyt6"]
+bg_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmodo"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Project_Nav_Button_" type="Button"]
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qhyt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pmodo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pmodo")
+toggle_mode = true
+script = ExtResource("2_rql46")

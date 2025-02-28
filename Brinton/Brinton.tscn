@@ -1,0 +1,433 @@
+[gd_scene load_steps=32 format=3 uid="uid://uvudq7mwvkct"]
+
+[ext_resource type="Script" path="res://Brinton/Brinton.gd" id="1_4x4he"]
+[ext_resource type="Texture2D" uid="uid://x401c1rtm60w" path="res://textures/brintonBorderCropped.png" id="1_jlsvp"]
+[ext_resource type="FontFile" uid="uid://cp33b1q6bfyke" path="res://fonts/codystar/Codystar-Regular.ttf" id="2_7ipfk"]
+[ext_resource type="ButtonGroup" uid="uid://cprsnvvj5asmr" path="res://Brinton/BrintonMenuButtons.tres" id="3_draqn"]
+[ext_resource type="Script" path="res://Brinton/resetBrintonScreen.gd" id="3_v4wg5"]
+[ext_resource type="Texture2D" uid="uid://ck1byfylhnaod" path="res://textures/grayX.png" id="4_4n8ef"]
+[ext_resource type="Script" path="res://Brinton/LanternItems.gd" id="4_vbak0"]
+[ext_resource type="Texture2D" uid="uid://dm58ju033ma8j" path="res://textures/lanterns/lanternA (1).jpg" id="5_21bbb"]
+[ext_resource type="Texture2D" uid="uid://j4wh12324vhi" path="res://textures/lanterns/lanternB (1).jpg" id="6_224qs"]
+[ext_resource type="Texture2D" uid="uid://dd2t57we51gx5" path="res://textures/lanterns/lanternC (1).jpg" id="7_0ubtq"]
+[ext_resource type="Texture2D" uid="uid://c38783vji5gy5" path="res://textures/lanterns/lanternD (1).jpg" id="8_27tq2"]
+[ext_resource type="Texture2D" uid="uid://bxfamhuaafcvv" path="res://textures/lanterns/lanternE (1).jpg" id="9_d0d1u"]
+[ext_resource type="Texture2D" uid="uid://ciij8mc74300m" path="res://textures/lanterns/lanternG (1).jpg" id="11_884hq"]
+[ext_resource type="Texture2D" uid="uid://c1ckyyohh5wic" path="res://textures/lanterns/lanternF (1).jpg" id="11_hwri5"]
+[ext_resource type="Script" path="res://Brinton/InfoItems.gd" id="13_6md14"]
+[ext_resource type="Script" path="res://Brinton/Map.gd" id="14_shyi2"]
+[ext_resource type="Script" path="res://Main Scene/Mainexit.gd" id="16_xxm6f"]
+[ext_resource type="Script" path="res://Brinton/OverlayShader.gd" id="17_cmvgc"]
+[ext_resource type="Texture2D" uid="uid://tjlr20nhjdx8" path="res://textures/left-arrow-gray-md.png" id="17_d88mh"]
+[ext_resource type="Script" path="res://Brinton/LanternWindow.gd" id="18_cec66"]
+[ext_resource type="Texture2D" uid="uid://b3aofaor8tlxa" path="res://textures/right-arrow-gray-md.png" id="20_utjoj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fqem"]
+bg_color = Color(0.666667, 0.447059, 0.137255, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rpugr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37v4k"]
+texture = SubResource("CanvasTexture_rpugr")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_emq03"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13bxi"]
+texture = SubResource("CanvasTexture_emq03")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_64l4h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyp6m"]
+texture = SubResource("CanvasTexture_64l4h")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmapv"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 27.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="Theme" id="Theme_gqmi6"]
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_fmapv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq8kt"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.666667, 0.447059, 0.137255, 1)
+
+[node name="Brinton" type="Control"]
+editor_description = "MUST BE NOTED:
+	SEE AB USING PACKED SCENE +INSTANTIATE TO LOAD IMAGES FASTER
+	
+	WHEN PRESS SEE MAP - MAKES MAP VISIBLE, MAKES MAINEXIT INVIS. NEED TO UNDO THESE WHEN ESCAPING"
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4x4he")
+
+[node name="MainBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="MainBackground"]
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 82.0
+offset_right = 6565.0
+offset_bottom = 2361.0
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_jlsvp")
+
+[node name="menuButtons" type="HBoxContainer" parent="MainBackground"]
+layout_mode = 0
+offset_left = 1111.0
+offset_top = 879.0
+offset_right = 2724.0
+offset_bottom = 999.0
+theme_override_constants/separation = 64
+script = ExtResource("3_v4wg5")
+
+[node name="lanterns" type="Button" parent="MainBackground/menuButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_pressed_color = Color(0.666667, 0.447059, 0.137255, 1)
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fqem")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_37v4k")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("3_draqn")
+text = "MAGIC LANTERNS"
+
+[node name="info" type="Button" parent="MainBackground/menuButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_pressed_color = Color(0.666667, 0.447059, 0.137255, 1)
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fqem")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_13bxi")
+toggle_mode = true
+button_group = ExtResource("3_draqn")
+text = "GALLERY INFO"
+
+[node name="map" type="Button" parent="MainBackground/menuButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_pressed_color = Color(0.666667, 0.447059, 0.137255, 1)
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fqem")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lyp6m")
+toggle_mode = true
+button_group = ExtResource("3_draqn")
+text = "SEE THE MAP"
+
+[node name="LanternItems" type="Control" parent="MainBackground"]
+anchors_preset = 0
+script = ExtResource("4_vbak0")
+
+[node name="NowShowing" type="Label" parent="MainBackground/LanternItems"]
+layout_mode = 0
+offset_left = 1373.0
+offset_top = 1035.0
+offset_right = 2456.0
+offset_bottom = 1201.0
+theme_override_fonts/font = ExtResource("2_7ipfk")
+theme_override_font_sizes/font_size = 140
+text = "NOW SHOWING"
+
+[node name="Carousel" type="ScrollContainer" parent="MainBackground/LanternItems"]
+custom_minimum_size = Vector2(3808, 0)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 1232.0
+offset_right = 3840.0
+offset_bottom = 2091.0
+theme = SubResource("Theme_gqmi6")
+horizontal_scroll_mode = 2
+vertical_scroll_mode = 3
+
+[node name="HFlowContainer" type="HBoxContainer" parent="MainBackground/LanternItems/Carousel"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="LanternA" type="Panel" parent="MainBackground/LanternItems/Carousel/HFlowContainer"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lq8kt")
+
+[node name="LanternAtb" type="TextureButton" parent="MainBackground/LanternItems/Carousel/HFlowContainer/LanternA"]
+custom_minimum_size = Vector2(1180, 812)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 7719.0
+offset_bottom = 7792.0
+scale = Vector2(0.153, 0.104)
+texture_normal = ExtResource("5_21bbb")
+
+[node name="LanternB" type="Panel" parent="MainBackground/LanternItems/Carousel/HFlowContainer"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lq8kt")
+
+[node name="LanternBtb" type="TextureButton" parent="MainBackground/LanternItems/Carousel/HFlowContainer/LanternB"]
+custom_minimum_size = Vector2(1180, 812)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 7719.0
+offset_bottom = 7792.0
+scale = Vector2(0.153, 0.104)
+texture_normal = ExtResource("6_224qs")
+
+[node name="LanternD" type="Panel" parent="MainBackground/LanternItems/Carousel/HFlowContainer"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lq8kt")
+
+[node name="LanternDtb" type="TextureButton" parent="MainBackground/LanternItems/Carousel/HFlowContainer/LanternD"]
+custom_minimum_size = Vector2(1180, 812)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1190.0
+offset_bottom = 822.0
+scale = Vector2(0.249, 0.211)
+texture_normal = ExtResource("8_27tq2")
+
+[node name="LanternE" type="Panel" parent="MainBackground/LanternItems/Carousel/HFlowContainer"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lq8kt")
+
+[node name="LanternEtb" type="TextureButton" parent="MainBackground/LanternItems/Carousel/HFlowContainer/LanternE"]
+custom_minimum_size = Vector2(1180, 812)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 7719.0
+offset_bottom = 7792.0
+scale = Vector2(0.153, 0.104)
+texture_normal = ExtResource("9_d0d1u")
+
+[node name="LanternF" type="Panel" parent="MainBackground/LanternItems/Carousel/HFlowContainer"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lq8kt")
+
+[node name="LanternFtb" type="TextureButton" parent="MainBackground/LanternItems/Carousel/HFlowContainer/LanternF"]
+custom_minimum_size = Vector2(1180, 812)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 7719.0
+offset_bottom = 7792.0
+scale = Vector2(0.153, 0.104)
+texture_normal = ExtResource("11_hwri5")
+
+[node name="LanternG" type="Panel" parent="MainBackground/LanternItems/Carousel/HFlowContainer"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lq8kt")
+
+[node name="LanternGtb" type="TextureButton" parent="MainBackground/LanternItems/Carousel/HFlowContainer/LanternG"]
+custom_minimum_size = Vector2(1180, 812)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1190.0
+offset_bottom = 822.0
+scale = Vector2(0.249, 0.211)
+texture_normal = ExtResource("11_884hq")
+
+[node name="LanternC" type="Panel" parent="MainBackground/LanternItems/Carousel/HFlowContainer"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lq8kt")
+
+[node name="LanternCtb" type="TextureButton" parent="MainBackground/LanternItems/Carousel/HFlowContainer/LanternC"]
+custom_minimum_size = Vector2(1180, 812)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 4821.0
+offset_bottom = 3874.0
+scale = Vector2(0.245, 0.21)
+texture_normal = ExtResource("7_0ubtq")
+
+[node name="InfoItems" type="Control" parent="MainBackground"]
+visible = false
+anchors_preset = 0
+offset_top = 1100.0
+offset_right = 3840.0
+offset_bottom = 2100.0
+script = ExtResource("13_6md14")
+
+[node name="infoHeader" type="Label" parent="MainBackground/InfoItems"]
+layout_mode = 2
+offset_left = 1060.0
+offset_right = 2780.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 80
+text = "THE EMERGENCE OF EARLY FILM IN AMERICA"
+
+[node name="infoDescription" type="Label" parent="MainBackground/InfoItems"]
+custom_minimum_size = Vector2(2116, 800)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 185.0
+offset_right = 3280.0
+offset_bottom = 985.0
+theme_override_font_sizes/font_size = 52
+text = "The Brinton Collection contains films, slides, projectors, papers, and other documents from the life and career of William Franklin Brinton of Washington, IA. Brinton was an itinerant showman, travelling from Texas to Minnesota to project slides, film, and stage other entertainments during the years 1895-1909. He was also the manager of the Graham Opera House in Washington, which is still an active movie theater today and was recently declared the longest continually operating cinema in the world. Brinton was an eccentric and energetic individual, and the collection not only preserves some of the earliest commercially available film, it also contains material related to Brinton’s experimental interests, such as his passion for designing flying machines long before human flight became a reality."
+autowrap_mode = 2
+
+[node name="Mainexit" type="TextureButton" parent="MainBackground"]
+layout_mode = 0
+offset_left = 3620.0
+offset_top = 81.0
+offset_right = 4900.0
+offset_bottom = 1361.0
+scale = Vector2(0.08, 0.08)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_4n8ef")
+script = ExtResource("16_xxm6f")
+
+[node name="LanternShader" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+color = Color(0, 0, 0, 0.658824)
+script = ExtResource("17_cmvgc")
+
+[node name="LanternWindow" type="Control" parent="LanternShader"]
+anchors_preset = 0
+offset_left = 1317.0
+offset_top = 510.0
+offset_right = 2589.0
+offset_bottom = 1542.0
+script = ExtResource("18_cec66")
+
+[node name="LanternImage" type="TextureRect" parent="LanternShader/LanternWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_21bbb")
+expand_mode = 3
+
+[node name="leftButton" type="TextureButton" parent="LanternShader/LanternWindow"]
+layout_mode = 0
+offset_left = -555.0
+offset_top = 430.0
+offset_right = -366.0
+offset_bottom = 729.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("17_d88mh")
+
+[node name="Navigation" type="Label" parent="LanternShader/LanternWindow"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = -117.0
+offset_right = 1078.0
+offset_bottom = -34.0
+theme_override_font_sizes/font_size = 60
+text = "Use arrows to navigate frames"
+
+[node name="rightButton" type="TextureButton" parent="LanternShader/LanternWindow"]
+top_level = true
+layout_mode = 0
+offset_left = 3042.0
+offset_top = 940.0
+offset_right = 3231.0
+offset_bottom = 1239.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("20_utjoj")
+
+[node name="exit" type="TextureButton" parent="LanternShader"]
+layout_mode = 0
+offset_left = 3620.0
+offset_top = 81.0
+offset_right = 4900.0
+offset_bottom = 1361.0
+scale = Vector2(0.08, 0.08)
+texture_normal = ExtResource("4_4n8ef")
+
+[node name="Map" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 899.0
+offset_top = 1464.0
+offset_right = 3160.0
+offset_bottom = 1809.0
+theme_override_colors/default_color = Color(0.729412, 0.509804, 0, 1)
+theme_override_fonts/bold_font = ExtResource("2_7ipfk")
+theme_override_font_sizes/normal_font_size = 300
+theme_override_font_sizes/bold_font_size = 300
+theme_override_font_sizes/italics_font_size = 300
+theme_override_font_sizes/bold_italics_font_size = 300
+theme_override_font_sizes/mono_font_size = 300
+bbcode_enabled = true
+text = "[b]Coming Soon[/b]"
+scroll_active = false
+script = ExtResource("14_shyi2")
+
+[node name="mapExit" type="TextureButton" parent="Map"]
+visible = false
+layout_mode = 0
+offset_left = 1810.0
+offset_top = 40.5
+offset_right = 3090.0
+offset_bottom = 1320.5
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("4_4n8ef")
+
+[connection signal="toggled" from="MainBackground/menuButtons/lanterns" to="MainBackground/LanternItems" method="_on_lanterns_toggled"]
+[connection signal="toggled" from="MainBackground/menuButtons/info" to="MainBackground/InfoItems" method="_on_info_toggled"]
+[connection signal="toggled" from="MainBackground/menuButtons/map" to="Map" method="_on_map_toggled"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternA/LanternAtb" to="LanternShader" method="_on_lantern_atb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternA/LanternAtb" to="LanternShader/LanternWindow" method="_on_lantern_atb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternB/LanternBtb" to="LanternShader" method="_on_lantern_btb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternB/LanternBtb" to="LanternShader/LanternWindow" method="_on_lantern_btb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternD/LanternDtb" to="LanternShader" method="_on_lantern_dtb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternD/LanternDtb" to="LanternShader/LanternWindow" method="_on_lantern_dtb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternE/LanternEtb" to="LanternShader" method="_on_lantern_etb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternE/LanternEtb" to="LanternShader/LanternWindow" method="_on_lantern_etb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternF/LanternFtb" to="LanternShader" method="_on_lantern_ftb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternF/LanternFtb" to="LanternShader/LanternWindow" method="_on_lantern_ftb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternG/LanternGtb" to="LanternShader" method="_on_lantern_gtb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternG/LanternGtb" to="LanternShader/LanternWindow" method="_on_lantern_gtb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternC/LanternCtb" to="LanternShader" method="_on_lantern_ctb_pressed"]
+[connection signal="pressed" from="MainBackground/LanternItems/Carousel/HFlowContainer/LanternC/LanternCtb" to="LanternShader/LanternWindow" method="_on_lantern_ctb_pressed"]
+[connection signal="pressed" from="MainBackground/Mainexit" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="LanternShader/LanternWindow/leftButton" to="LanternShader/LanternWindow" method="_on_left_button_pressed"]
+[connection signal="pressed" from="LanternShader/LanternWindow/rightButton" to="LanternShader/LanternWindow" method="_on_right_button_pressed"]
+[connection signal="pressed" from="LanternShader/exit" to="LanternShader" method="_on_exit_pressed"]
+[connection signal="pressed" from="LanternShader/exit" to="LanternShader/LanternWindow" method="_on_exit_pressed"]
+[connection signal="pressed" from="Map/mapExit" to="MainBackground/menuButtons" method="_on_exit_pressed"]
+[connection signal="pressed" from="Map/mapExit" to="LanternShader" method="_on_exit_pressed"]

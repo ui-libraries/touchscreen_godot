@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddm5bgwd5ix54"]
+
+[ext_resource type="Script" path="res://Main Scene/About subscreen/AboutPage.gd" id="1_bq74v"]
+
+[node name="Page" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2560.0
+offset_bottom = 1732.0
+script = ExtResource("1_bq74v")
+
+[node name="MainHeader" type="Label" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 213.0
+offset_right = 1739.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 80
+text = "The Digital Scholarship and Publishing Studio"
+
+[node name="Body" type="RichTextLabel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 353.0
+offset_right = 2560.0
+offset_bottom = 1053.0
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+text = "The Studio collaborates with faculty and students on the digital design, implementation, and circulation of their research. Subscribing to a show more, tell less approach where digital scholarship-particularly the digital humanities-is concerned, the Studio embraces scholarly creativity and encourages interdisciplinary research and multiplatform circulation. In this manner, the Studio helps scholars tailor the presentation and application of their research to a variety of audiences. 
+
+Housed in the UI Libraries, the Studio oversees the Iowa Digital Library, Iowa Research Online, DIY History, and faculty and graduate student Digital Editions. Given its position in the Libraries, the Studio can shepherd digital projects from their inception to their eventual archival treatments, creating responsible lifespans for these projects and their attendant data. 
+
+In close connection with other campus resources, including Student Instructional Technology Assistants (SITAs) and the UI Libraries' Research & Library Instruction department, the Studio can help instructors thread their research projects into university and community curricula. "
+
+[node name="EndHeader" type="Label" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 1066.0
+offset_right = 40.0
+offset_bottom = 1089.0
+theme_override_font_sizes/font_size = 60
+text = "Consult with us"
+
+[node name="EndBody" type="RichTextLabel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 1160.0
+offset_right = 2500.0
+offset_bottom = 1320.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Digital Scholarship & Publishing Studio
+319-384-0925
+thestudio@uiowa.edu"

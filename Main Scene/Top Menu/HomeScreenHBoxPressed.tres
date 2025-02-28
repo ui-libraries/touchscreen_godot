@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://ogvgj5qchimf"]
+
+[resource]
+resource_name = "HomeScreenHeaderButtonPressed"
+bg_color = Color(1, 0.843137, 0, 1)
+border_width_left = 40
+border_width_top = 34
+border_width_right = 40
+border_width_bottom = 34
+border_color = Color(0, 0, 0, 1)
