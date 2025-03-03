@@ -1,15 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg1objwwe0wa4"]
+[gd_scene load_steps=6 format=3 uid="uid://dg1objwwe0wa4"]
 
 [ext_resource type="Script" path="res://Main Scene/About subscreen/AboutPage.gd" id="1_kiva1"]
 [ext_resource type="Texture2D" uid="uid://btk14x5awl3ja" path="res://textures/brintonMain.png" id="2_5efoy"]
 [ext_resource type="Theme" uid="uid://bixl2a5bbehfh" path="res://Brinton/VScrollerTheme.tres" id="2_jnxbu"]
 [ext_resource type="Texture2D" uid="uid://boib0b43hy2ws" path="res://textures/whitmanMain.png" id="3_cnytn"]
 [ext_resource type="Texture2D" uid="uid://dt76blxr0mv2h" path="res://textures/tractatusMain.jpg" id="4_ym4lm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uhg7"]
-bg_color = Color(0.678431, 0.847059, 0.901961, 1)
-border_width_top = 5
-border_color = Color(0.901961, 0.901961, 0.901961, 1)
 
 [node name="Page" type="Control"]
 layout_mode = 3
@@ -59,28 +54,6 @@ scale = Vector2(0.115, 0.115)
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_5efoy")
 
-[node name="Project1 Label" type="Label" parent="ScrollContainer/VBoxContainer/Row1/Project1"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -656.0
-offset_top = -179.0
-offset_right = -1.0
-offset_bottom = -4.0
-grow_horizontal = 0
-grow_vertical = 0
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_1uhg7")
-text = "     Brinton Entertainment"
-vertical_alignment = 1
-autowrap_mode = 2
-
 [node name="Project2" type="Control" parent="ScrollContainer/VBoxContainer/Row1"]
 anchors_preset = 0
 offset_left = 1410.0
@@ -94,29 +67,6 @@ offset_bottom = 3856.0
 scale = Vector2(0.115, 0.115)
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_cnytn")
-
-[node name="Project2 Label" type="Label" parent="ScrollContainer/VBoxContainer/Row1/Project2"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -656.0
-offset_top = -179.0
-offset_right = -1.0
-offset_bottom = -4.0
-grow_horizontal = 0
-grow_vertical = 0
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_1uhg7")
-text = "     Walt Whitman
-"
-vertical_alignment = 1
-autowrap_mode = 2
 
 [node name="Row2" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 450)
@@ -138,28 +88,6 @@ mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("4_ym4lm")
 stretch_mode = 4
-
-[node name="Project3 Label" type="Label" parent="ScrollContainer/VBoxContainer/Row2/Project3"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -656.0
-offset_top = -179.0
-offset_right = -1.0
-offset_bottom = -4.0
-grow_horizontal = 0
-grow_vertical = 0
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_1uhg7")
-text = "     Tractatus Map"
-vertical_alignment = 1
-autowrap_mode = 2
 
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Row1/Project1/Porject1 Picture" to="." method="_on_porject_1_picture_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Row1/Project2/Porject2 Picture" to="." method="_on_porject_2_picture_pressed"]
